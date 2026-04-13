@@ -1,32 +1,36 @@
-import { useNavigate } from "react-router-dom";
+import { GraduationCap, Users, Shield } from "lucide-react";
 
-type Props = {
-  icon: string;
-  title: string;
-  description: string;
-};
+export default function RoleCard({ title, description }: any) {
 
-export default function RoleCard({ icon, title, description }: Props) {
-  const navigate = useNavigate();
+  const icons: any = {
+    Student: <GraduationCap size={28} />,
+    Coordinator: <Users size={28} />,
+    Administrator: <Shield size={28} />
+  };
 
   return (
-    <div
-      onClick={() => navigate("/home")}
-      className="bg-white p-8 rounded-xl shadow text-center hover:shadow-lg hover:-translate-y-1 cursor-pointer"
-    >
-      <span className="material-symbols-outlined text-3xl text-emerald-500">
-        {icon}
-      </span>
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition p-8 text-center">
 
-      <h3 className="text-xl font-bold mt-4">{title}</h3>
+      {/* ICON */}
+      <div className="w-14 h-14 mx-auto rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mb-4">
+        {icons[title]}
+      </div>
 
-      <p className="text-gray-500 text-sm mt-3 mb-6">
+      {/* TITLE */}
+      <h3 className="text-lg font-semibold text-gray-900 mb-2">
+        {title}
+      </h3>
+
+      {/* DESCRIPTION */}
+      <p className="text-sm text-gray-500 mb-6">
         {description}
       </p>
 
-      <button className="text-emerald-600 font-semibold">
-        Login →
-      </button>
+      {/* LINK */}
+      <a className="text-blue-600 text-sm font-medium hover:underline cursor-pointer">
+        Login as {title} →
+      </a>
+
     </div>
   );
 }
