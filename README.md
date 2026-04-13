@@ -72,3 +72,4 @@ export default defineConfig([
 ])
 ```
 # websyst-faburada
+# websyst-faburada
