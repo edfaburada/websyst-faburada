@@ -4,51 +4,60 @@ import Footer from "../../Footer";
 
 export default function Landing() {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 flex flex-col">
 
       <Navbar />
 
-      <main className="pt-28 px-6 max-w-6xl mx-auto">
+      {/* HERO SECTION */}
+      <main className="flex-1 pt-28 px-6 max-w-6xl mx-auto">
 
         <div className="text-center mb-16">
-          <p className="text-emerald-500 font-medium">
+
+          {/* small label */}
+          <p className="text-blue-600 font-semibold tracking-widest text-xs uppercase">
             Access Management System
           </p>
 
-          <h1 className="text-4xl font-bold mt-4 mb-4">
-            Digital SIL Monitoring System
+          {/* title */}
+          <h1 className="text-3xl md:text-5xl font-bold mt-4 mb-4 leading-tight">
+            Digital Supervised Industry Learning (SIL) Monitoring System for Diploma Students of Asian College
           </h1>
 
-          <p className="text-gray-500 max-w-xl mx-auto">
-            Track, manage, and monitor student industry learning progress.
+          {/* subtitle */}
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            Welcome to the centralized portal for tracking, managing, and certifying industrial learning progress.
+            Please select your designated role to proceed.
           </p>
         </div>
 
+        {/* ROLE CARDS */}
         <div className="grid md:grid-cols-3 gap-6">
 
           <RoleCard
             icon="school"
             title="Student"
-            description="Submit logs, track attendance, and manage reports."
+            description="Submit daily logs, track attendance hours, and manage journal reports for the SIL program."
           />
 
           <RoleCard
             icon="groups"
             title="Coordinator"
-            description="Review journals and approve records."
+            description="Review student journals, approve attendance records, and generate institutional progress reports."
           />
 
           <RoleCard
             icon="admin_panel_settings"
             title="Administrator"
-            description="Manage system access and users."
+            description="Manage user access, configure academic terms, and oversee system security and performance."
           />
 
         </div>
 
       </main>
 
+      {/* FOOTER */}
       <Footer />
+
     </div>
   );
 }
