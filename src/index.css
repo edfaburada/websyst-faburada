@@ -1,14 +1,10 @@
-/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind base;
-/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind components;
-/* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
 
-/* Global styles */
 body {
-  background-color: #f9fafb; /* same as bg-gray-50 */
-  color: #1f2937; /* same as text-gray-800 */
+  background-color: #f9fafb;
+  color: #1f2937;
   font-family: 'Inter', sans-serif;
 }
 
