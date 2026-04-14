@@ -64,22 +64,9 @@
 }
 
 /* ===== BUTTON ===== */
-.navbar-btn {
-  background: #10b981;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.navbar-btn:hover {
-  background: #059669;
-}
 
 .navbar-btn-danger {
-  background: #ef4444 !important; /* red */
+  background: #ef4444; /* red */
   color: white;
 }
 
