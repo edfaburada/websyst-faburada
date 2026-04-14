@@ -1,28 +1,28 @@
 import { NavLink } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
   const linkStyle = ({ isActive }: { isActive: boolean }) =>
-    isActive
-      ? "text-emerald-500 font-semibold"
-      : "text-gray-600 hover:text-emerald-500";
+    isActive ? "nav-link active" : "nav-link";
 
   return (
-    <header className="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-16 bg-white border-b shadow-sm">
+    <header className="navbar">
 
-      <h2 className="font-bold text-lg text-emerald-600">
+      <h2 className="navbar-logo">
         SIL Monitor
       </h2>
 
-      <nav className="hidden md:flex gap-6">
+      <nav className="navbar-links">
         <NavLink to="/home" className={linkStyle}>Home</NavLink>
         <NavLink to="/about" className={linkStyle}>About</NavLink>
         <NavLink to="/services" className={linkStyle}>Services</NavLink>
         <NavLink to="/contact" className={linkStyle}>Contact</NavLink>
       </nav>
 
-      <button className="bg-emerald-500 text-white px-4 py-2 rounded hover:bg-emerald-600">
+      <button className="navbar-btn">
         Sign Up
       </button>
+
     </header>
   );
 }

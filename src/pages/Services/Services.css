@@ -1,0 +1,56 @@
+/* ===== CONTAINER ===== */
+.services-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #f8fafc, #ffffff);
+}
+
+/* ===== MAIN WRAPPER ===== */
+.services-main {
+  flex: 1;
+  padding: 100px 24px 40px; /* space for navbar */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===== CARD ===== */
+.services-card {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+/* ===== TITLE ===== */
+.services-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+/* ===== LIST ===== */
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ===== LIST ITEM ===== */
+.services-list li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* optional check icon style */
+.services-check {
+  color: #10b981;
+  font-weight: bold;
+}
