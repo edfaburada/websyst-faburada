@@ -1,4 +1,4 @@
-import { NavLink, useNavigate, Link } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -10,10 +10,9 @@ export default function Navbar() {
   return (
     <header className="navbar">
 
-      {/* ✅ CLICKABLE LOGO */}
-      <Link to="/" className="navbar-logo">
+      <h2 className="navbar-logo">
         SIL Monitor
-      </Link>
+      </h2>
 
       <nav className="navbar-links">
         <NavLink to="/home" className={linkStyle}>Home</NavLink>

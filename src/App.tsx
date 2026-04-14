@@ -1,6 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
+// PUBLIC PAGES
 import Landing from "./pages/landing/Landing";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -9,7 +10,7 @@ import Contact from "./pages/Contact/Contact";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
 
-// ✅ ADD THESE (you need to create these pages)
+// DASHBOARDS (ROLE-BASED)
 import StudentDashboard from "./pages/Dashboard/StudentDashboard";
 import CoordinatorDashboard from "./pages/Dashboard/CoordinatorDashboard";
 import AdminDashboard from "./pages/Dashboard/AdminDashboard";
@@ -19,7 +20,8 @@ export default function App() {
     <div className="app">
 
       <Routes>
-        {/* PUBLIC PAGES */}
+
+        {/* ===== PUBLIC ROUTES ===== */}
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -27,10 +29,10 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
 
-        {/* LOGIN (ROLE BASED) */}
+        {/* ===== LOGIN (ROLE-BASED ROUTING) ===== */}
         <Route path="/login/:role" element={<Login />} />
 
-        {/* DASHBOARDS (AFTER LOGIN) */}
+        {/* ===== DASHBOARDS ===== */}
         <Route path="/dashboard/student" element={<StudentDashboard />} />
         <Route path="/dashboard/coordinator" element={<CoordinatorDashboard />} />
         <Route path="/dashboard/admin" element={<AdminDashboard />} />
