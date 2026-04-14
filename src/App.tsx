@@ -2,10 +2,10 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Landing from "./pages/landing/Landing";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
-import Services from "./pages/Services";
-import Contact from "./pages/Contact";
+import Services from "./pages/Services/Services";
+import Contact from "./pages/Contact/Contact";
 
 export default function App() {
   return (

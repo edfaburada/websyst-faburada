@@ -1,6 +1,6 @@
 import "./Login.css";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../Footer";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
