@@ -32,7 +32,7 @@ export default function RoleCard({ title, description, href }: RoleCardProps) {
         {description}
       </p>
 
-      {/* SIMPLE LINK (ORIGINAL STYLE) */}
+      {/* CLICKABLE LINK */}
       <Link to={href} className="role-link">
         Login as {title} →
       </Link>
