@@ -1,32 +1,58 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
-export default function Navbar() {
+export default function Navbar({ isLoggedIn = false }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const linkStyle = ({ isActive }: { isActive: boolean }) =>
-    isActive ? "nav-link active" : "nav-link";
+  // 🔥 detect if user is in dashboard
+  const isDashboard = location.pathname.startsWith("/dashboard");
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    navigate("/");
+  };
 
   return (
     <header className="navbar">
 
-      <h2 className="navbar-logo">
-        SIL Monitor
-      </h2>
+      {/* 🔥 LOGO LOGIC */}
+      {isDashboard ? (
+        <h2 className="navbar-logo">
+          SIL Monitor
+        </h2>
+      ) : (
+        <Link to="/" className="navbar-logo">
+          SIL Monitor
+        </Link>
+      )}
 
-      <nav className="navbar-links">
-        <NavLink to="/home" className={linkStyle}>Home</NavLink>
-        <NavLink to="/about" className={linkStyle}>About</NavLink>
-        <NavLink to="/services" className={linkStyle}>Services</NavLink>
-        <NavLink to="/contact" className={linkStyle}>Contact</NavLink>
-      </nav>
+      {/* 🔥 MENU ONLY FOR NON-DASHBOARD */}
+      {!isDashboard && (
+        <nav className="navbar-links">
+          <NavLink to="/home">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/services">Services</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+        </nav>
+      )}
 
-      <button
-        onClick={() => navigate("/register")}
-        className="navbar-btn"
-      >
-        Sign Up
-      </button>
+      {/* BUTTON */}
+      {!isLoggedIn ? (
+        <button
+          onClick={() => navigate("/register")}
+          className="navbar-btn"
+        >
+          Sign Up
+        </button>
+      ) : (
+<button
+  onClick={handleLogout}
+  className="navbar-btn navbar-btn-danger"
+>
+  Sign Out
+</button>
+      )}
 
     </header>
   );

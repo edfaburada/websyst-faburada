@@ -10,19 +10,31 @@ export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState(""); // 👈 NEW STATE
+  const [role, setRole] = useState("");
 
+  // ✅ HANDLE REGISTER FUNCTION (FIXED)
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (name && email && password && role) {
-      alert(`Registration successful as ${role}!`);
-
-      // redirect to LANDING PAGE (role selection screen)
-      navigate("/");
-    } else {
+    if (!name || !email || !password || !role) {
       alert("Please fill in all fields including role");
+      return;
     }
+
+    // ✅ SAVE USER DATA (SIMULATION AUTH)
+    const userData = {
+      name,
+      email,
+      password,
+      role,
+    };
+
+    localStorage.setItem("user", JSON.stringify(userData));
+
+    alert(`Registered successfully as ${role}!`);
+
+    // redirect back to login or landing page
+    navigate("/");
   };
 
   return (
@@ -38,7 +50,7 @@ export default function Register() {
 
           <form onSubmit={handleRegister} className="register-form">
 
-            {/* FULL NAME */}
+            {/* NAME */}
             <div>
               <label>Full Name</label>
               <input
@@ -71,7 +83,7 @@ export default function Register() {
               />
             </div>
 
-            {/* ROLE DROPDOWN 👇 */}
+            {/* ROLE */}
             <div>
               <label>Select Role</label>
               <select
@@ -85,21 +97,11 @@ export default function Register() {
               </select>
             </div>
 
-            {/* BUTTON */}
             <button type="submit">
               Register
             </button>
 
           </form>
-
-          {/* LOGIN LINK */}
-<p className="register-footer-text">
-  Already have an account?{" "}
-  <span onClick={() => navigate("/")}>
-    Login
-  </span>
-          </p>
-
         </div>
 
       </main>

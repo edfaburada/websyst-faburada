@@ -6,7 +6,8 @@ export default function StudentDashboard() {
   return (
     <div className="dashboard-container">
 
-      <Navbar />
+      {/* 🔥 DASHBOARD MODE + LOGIN STATE */}
+      <Navbar isLoggedIn={true} />
 
       <main className="dashboard-main">
 

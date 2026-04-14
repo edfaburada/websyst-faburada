@@ -6,7 +6,8 @@ export default function CoordinatorDashboard() {
   return (
     <div className="dashboard-container">
 
-      <Navbar />
+      {/* 🔥 NO clickable logo (dashboard mode ON) */}
+      <Navbar isLoggedIn={true} />
 
       <main className="dashboard-main">
 

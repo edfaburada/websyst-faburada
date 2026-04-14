@@ -12,22 +12,56 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // =========================
+  // LOGIN (ROLE-BASED)
+  // =========================
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (email && password) {
-      alert("Login successful");
-      navigate("/home");
+    const storedUser = JSON.parse(localStorage.getItem("user") || "null");
+
+    if (!storedUser) {
+      alert("No registered user found. Please register first.");
+      return;
+    }
+
+    if (email === storedUser.email && password === storedUser.password) {
+      alert("Login successful!");
+
+      // ✅ ROLE-BASED REDIRECT
+      if (storedUser.role === "Student") {
+        navigate("/dashboard/student");
+      } else if (storedUser.role === "Coordinator") {
+        navigate("/dashboard/coordinator");
+      } else if (storedUser.role === "Administrator") {
+        navigate("/dashboard/admin");
+      }
+
     } else {
-      alert("Please fill in all fields");
+      alert("Invalid email or password");
     }
   };
 
+  // =========================
+  // REGISTER (SIMPLE SAVE)
+  // =========================
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (name && email && password) {
-      alert("Registration successful");
+      alert("Registration successful!");
+
+      // Save basic user (you can expand this later)
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          name,
+          email,
+          password,
+          role: "Student", // default role if not selected elsewhere
+        })
+      );
+
       navigate("/");
     } else {
       alert("Please fill in all fields");
@@ -47,8 +81,37 @@ export default function Login() {
             {isRegister ? "Create Account" : "Login"}
           </h1>
 
-          {/* FORM */}
-          {isRegister ? (
+          {/* ================= LOGIN FORM ================= */}
+          {!isRegister ? (
+            <form onSubmit={handleLogin} className="login-form">
+
+              <div>
+                <label className="login-label">Email</label>
+                <input
+                  className="login-input"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+
+              <div>
+                <label className="login-label">Password</label>
+                <input
+                  className="login-input"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+
+              <button className="login-button" type="submit">
+                Login
+              </button>
+
+            </form>
+          ) : (
+            /* ================= REGISTER FORM ================= */
             <form onSubmit={handleRegister} className="login-form">
 
               <div>
@@ -86,36 +149,9 @@ export default function Login() {
               </button>
 
             </form>
-          ) : (
-            <form onSubmit={handleLogin} className="login-form">
-
-              <div>
-                <label className="login-label">Email</label>
-                <input
-                  className="login-input"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label className="login-label">Password</label>
-                <input
-                  className="login-input"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-
-              <button className="login-button" type="submit">
-                Login
-              </button>
-
-            </form>
           )}
 
+          {/* SWITCH TEXT */}
           <p className="login-switch-text">
             {isRegister ? "Already have an account?" : "Don't have an account?"}
           </p>

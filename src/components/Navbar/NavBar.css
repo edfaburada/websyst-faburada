@@ -77,3 +77,12 @@
 .navbar-btn:hover {
   background: #059669;
 }
+
+.navbar-btn-danger {
+  background: #ef4444; /* red */
+  color: white;
+}
+
+.navbar-btn-danger:hover {
+  background: #dc2626;
+}

@@ -6,7 +6,8 @@ export default function AdminDashboard() {
   return (
     <div className="dashboard-container">
 
-      <Navbar />
+      {/* 🔥 DASHBOARD MODE + LOGGED IN */}
+      <Navbar isLoggedIn={true} />
 
       <main className="dashboard-main">
 
