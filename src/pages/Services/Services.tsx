@@ -12,17 +12,48 @@ export default function Services() {
 
         <div className="services-card">
 
-          <h1 className="services-title">Services</h1>
+          <div className="services-badge">
+            System Features
+          </div>
 
-          <ul className="services-list">
+          <h1 className="services-title">
+            Services
+          </h1>
 
-            <li><span className="services-check">✔</span> Student logbook submission</li>
-            <li><span className="services-check">✔</span> Attendance tracking</li>
-            <li><span className="services-check">✔</span> Coordinator review system</li>
-            <li><span className="services-check">✔</span> Administrator access control</li>
-            <li><span className="services-check">✔</span> Real-time progress monitoring</li>
+          <p className="services-text">
+            The SIL Monitoring System provides tools to manage, track, and evaluate
+            student industrial learning activities efficiently.
+          </p>
 
-          </ul>
+          {/* FEATURE GRID */}
+          <div className="services-grid">
+
+            <div className="services-box">
+              <h3>📘 Logbook System</h3>
+              <p>Students submit daily activity logs digitally.</p>
+            </div>
+
+            <div className="services-box">
+              <h3>⏱ Attendance Tracking</h3>
+              <p>Monitor student training hours in real time.</p>
+            </div>
+
+            <div className="services-box">
+              <h3>🧑‍🏫 Coordinator Review</h3>
+              <p>Approve and evaluate student submissions.</p>
+            </div>
+
+            <div className="services-box">
+              <h3>🔐 Role Access Control</h3>
+              <p>Secure login system for each user type.</p>
+            </div>
+
+            <div className="services-box">
+              <h3>📊 Progress Monitoring</h3>
+              <p>Track student development and completion status.</p>
+            </div>
+
+          </div>
 
         </div>
 

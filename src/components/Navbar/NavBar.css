@@ -18,9 +18,18 @@
 
 /* ===== LOGO ===== */
 .navbar-logo {
-  font-weight: bold;
   font-size: 18px;
+  font-weight: bold;
   color: #10b981;
+
+  text-decoration: none; /* removes underline */
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.navbar-logo:hover {
+  opacity: 0.8;
 }
 
 /* ===== NAV LINKS ===== */
