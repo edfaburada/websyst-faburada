@@ -1,7 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
   const linkStyle = ({ isActive }: { isActive: boolean }) =>
     isActive ? "nav-link active" : "nav-link";
 
@@ -19,7 +21,10 @@ export default function Navbar() {
         <NavLink to="/contact" className={linkStyle}>Contact</NavLink>
       </nav>
 
-      <button className="navbar-btn">
+      <button
+        onClick={() => navigate("/register")}
+        className="navbar-btn"
+      >
         Sign Up
       </button>
 

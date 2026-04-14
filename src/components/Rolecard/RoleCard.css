@@ -1,29 +1,32 @@
-/* ===== CARD CONTAINER ===== */
+/* ===== ROLE CARD (ORIGINAL DESIGN RESTORED) ===== */
 .role-card {
-  background: #ffffff;
+  background: white;
   padding: 40px;
-  border-radius: 20px;
-  border: 1px solid #f1f5f9;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+
+  transition: transform 0.3s ease;
 }
 
-/* Hover effect */
+/* SIMPLE HOVER (VERY LIGHT, ORIGINAL STYLE) */
 .role-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
 }
 
-/* ===== ICON WRAPPER ===== */
+/* ===== ICON ===== */
 .role-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 9999px;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 24px;
+
+  border-radius: 16px;
   background: #f1f5f9;
 
   display: flex;
@@ -31,7 +34,6 @@
   justify-content: center;
 
   color: #2563eb;
-  margin-bottom: 24px;
 }
 
 /* ===== TITLE ===== */
@@ -39,7 +41,7 @@
   font-size: 20px;
   font-weight: 700;
   color: #1e293b;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 /* ===== DESCRIPTION ===== */
@@ -47,24 +49,18 @@
   font-size: 13px;
   color: #64748b;
   line-height: 1.6;
-  margin-bottom: 32px;
-  flex-grow: 1;
+  margin-bottom: 24px;
 }
 
 /* ===== LINK ===== */
 .role-link {
-  color: #2563eb;
   font-size: 14px;
   font-weight: 600;
+  color: #2563eb;
   text-decoration: none;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-
-  transition: 0.2s ease;
 }
 
 .role-link:hover {
   text-decoration: underline;
+  color: #10b981;
 }

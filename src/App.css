@@ -3,4 +3,32 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #f8fafc;
+  color: #191c1d;
+}
+
+/* ===== GLOBAL PAGE CONTENT SPACING ===== */
+main {
+  flex: 1;
+  padding-top: 80px; /* space for fixed navbar */
+}
+
+/* ===== SMOOTH FONT + RENDERING ===== */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f8fafc;
+}
+
+/* ===== GLOBAL LINK RESET ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== BUTTON RESET (optional consistency) ===== */
+button {
+  font-family: inherit;
 }
