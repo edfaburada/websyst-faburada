@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./RoleCard.css";
 import { GraduationCap, Users, Shield } from "lucide-react";
 
 interface RoleCardProps {
@@ -8,31 +9,24 @@ interface RoleCardProps {
 }
 
 export default function RoleCard({ title, description, href }: RoleCardProps) {
+
   const icons = {
-    Student: <GraduationCap size={24} />,
-    Coordinator: <Users size={24} />,
-    Administrator: <Shield size={24} />
+    Student: <GraduationCap size={26} />,
+    Coordinator: <Users size={26} />,
+    Administrator: <Shield size={26} />
   };
 
   return (
     <div className="role-card">
 
-      {/* ICON */}
       <div className="role-icon">
         {icons[title]}
       </div>
 
-      {/* TITLE */}
-      <h3 className="role-title">
-        {title}
-      </h3>
+      <h3 className="role-title">{title}</h3>
 
-      {/* DESCRIPTION */}
-      <p className="role-desc">
-        {description}
-      </p>
+      <p className="role-desc">{description}</p>
 
-      {/* CLICKABLE LINK */}
       <Link to={href} className="role-link">
         Login as {title} →
       </Link>
