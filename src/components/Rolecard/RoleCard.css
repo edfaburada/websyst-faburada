@@ -1,105 +1,92 @@
 .role-card {
   width: 100%;
-  max-width: 320px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
-  padding: 40px 28px;
-
+  padding: 40px;
   background: #ffffff;
-
-  border-radius: 18px;
-  border: 1px solid #e2e8f0;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-
-  transition: all 0.25s ease;
-
-  gap: 16px; /* cleaner spacing control */
+  border-radius: 16px; /* slightly softer corners */
+  border: 1px solid #e5e7eb;
+  /* Soft editorial shadow from the design */
+  box-shadow: 0 10px 40px -10px rgba(25, 28, 29, 0.04);
+  transition: all 0.3s ease;
+  height: 100%; /* Ensures cards stretch equally in a grid */
 }
 
 /* HOVER */
 .role-card:hover {
-  transform: translateY(-6px);
-  border-color: #2563eb;
-  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.12);
+  transform: translateY(-4px);
+  border-color: #0056b3; /* Brand blue border on hover */
 }
 
-/* ICON */
+/* ICON CONTAINER */
 .role-icon {
-  width: 70px;
-  height: 70px;
-
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: #dbeafe;
-
+  background: #d7e2ff; /* Light blue from design */
+  color: #003f87; /* Deep blue icon */
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 24px;
+  transition: transform 0.3s ease;
+}
 
-  color: #2563eb;
-
-  margin-bottom: 4px; /* reduced spacing (gap handles layout now) */
+.role-card:hover .role-icon {
+  transform: scale(1.1);
 }
 
 /* TITLE */
 .role-title {
-  font-size: 20px;
-  font-weight: 800;
-  color: #111827;
-
-  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #191c1d;
+  margin: 0 0 16px 0;
 }
 
 /* DESCRIPTION */
 .role-desc {
-  font-size: 13px;
-  color: #6b7280;
+  font-size: 14px;
+  color: #424752;
   line-height: 1.6;
-
-  margin: 0;
-
-  padding: 0 4px;
-
-  min-height: 48px; /* keeps all cards equal height */
+  margin: 0 0 32px 0;
+  flex-grow: 1; /* Pushes the button to the bottom evenly */
 }
 
 /* BUTTON */
 .role-link {
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding: 12px 14px;
-
-  background: #2563eb; /* BLUE BUTTON */
+  padding: 14px;
+  /* Deep blue gradient from the design */
+  background: linear-gradient(to right, #003f87, #0056b3);
   color: #ffffff;
-
-  border-radius: 12px;
-
+  border-radius: 9999px; /* Pill shape */
   font-size: 14px;
   font-weight: 600;
-
   text-decoration: none;
-
   transition: all 0.2s ease;
-
-  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 10px 15px -3px rgba(0, 63, 135, 0.2);
 }
 
-/* HOVER */
+/* BUTTON HOVER / ACTIVE */
 .role-link:hover {
-  background: #1d4ed8;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 22px rgba(29, 78, 216, 0.3);
+  opacity: 0.95;
+  box-shadow: 0 12px 20px -3px rgba(0, 63, 135, 0.3);
 }
 
-/* ACTIVE CLICK */
 .role-link:active {
   transform: scale(0.97);
+}
+
+/* SUBTEXT (New for the design) */
+.role-subtext {
+  font-size: 12px;
+  color: #475a7f;
+  font-weight: 500;
+  margin: 16px 0 0 0;
 }

@@ -10,18 +10,21 @@ export default function Landing() {
       description:
         "Submit daily logs, track attendance hours, and manage journal reports for the SIL program.",
       href: "/login/student",
+      subtext: "Asian College ID Required", // Added subtext
     },
     {
       title: "Coordinator",
       description:
         "Review student journals, approve attendance records, and generate institutional reports.",
       href: "/login/coordinator",
+      subtext: "Faculty Credentials", // Added subtext
     },
     {
       title: "Administrator",
       description:
         "Manage user access, configure academic terms, and oversee system security.",
       href: "/login/admin",
+      subtext: "Full System Access", // Added subtext
     },
   ] as const;
 
@@ -59,6 +62,7 @@ export default function Landing() {
               title={role.title}
               description={role.description}
               href={role.href}
+              subtext={role.subtext} // Passed subtext to the component
             />
           ))}
         </div>
