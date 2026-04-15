@@ -3,17 +3,17 @@ import { Routes, Route } from "react-router-dom";
 
 // PUBLIC PAGES
 import Landing from "./pages/landing/Landing";
-import Home from "./pages/Home/Home";
-import About from "./pages/About/About";
-import Services from "./pages/Services/Services";
-import Contact from "./pages/Contact/Contact";
-import Register from "./pages/Register/Register";
-import Login from "./pages/Login/Login";
+import Home from "./pages/home/Home";
+import About from "./pages/about/About";
+import Services from "./pages/services/Services";
+import Contact from "./pages/contact/Contact";
+import Register from "./pages/register/Register";
+import Login from "./pages/login/Login";
 
 // DASHBOARDS (ROLE-BASED)
-import StudentDashboard from "./pages/Dashboard/StudentDashboard";
-import CoordinatorDashboard from "./pages/Dashboard/CoordinatorDashboard";
-import AdminDashboard from "./pages/Dashboard/AdminDashboard";
+import StudentDashboard from "./pages/dashboard/StudentDashboard";
+import CoordinatorDashboard from "./pages/dashboard/CoordinatorDashboard";
+import AdminDashboard from "./pages/dashboard/AdminDashboard";
 
 export default function App() {
   return (

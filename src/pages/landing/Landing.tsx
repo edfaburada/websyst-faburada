@@ -1,6 +1,6 @@
 import "./Landing.css";
-import Navbar from "../../components/Navbar/NavBar";
-import RoleCard from "../../components/Rolecard/RoleCard";
+import Navbar from "../../components/navbar/NavBar";
+import RoleCard from "../../components/rolecard/RoleCard";
 import Footer from "../../Footer";
 
 export default function Landing() {
