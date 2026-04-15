@@ -1,5 +1,5 @@
 import { GraduationCap, Users, Shield } from "lucide-react";
-import "./rolecard.css"; // Make sure to import your CSS file!
+import "./Rolecard.css"; // Make sure to import your CSS file!
 
 interface RoleCardProps {
   title: "Student" | "Coordinator" | "Administrator";
