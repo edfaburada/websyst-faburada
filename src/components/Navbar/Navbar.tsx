@@ -1,5 +1,5 @@
 import { NavLink, useNavigate, Link, useLocation } from "react-router-dom";
-import "./Navbar.css";
+import "./styles/Navbar.css";
 
 export default function Navbar({ isLoggedIn = false }) {
   const navigate = useNavigate();
