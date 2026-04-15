@@ -1,5 +1,5 @@
 import "./Landing.css";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/Navbar/NavBar";
 import RoleCard from "../../components/Rolecard/RoleCard";
 import Footer from "../../Footer";
 

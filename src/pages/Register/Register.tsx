@@ -1,7 +1,7 @@
 import "./Register.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/Navbar/NavBar";
 import Footer from "../../Footer";
 
 export default function Register() {

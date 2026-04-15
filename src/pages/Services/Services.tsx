@@ -1,5 +1,5 @@
 import "./Services.css";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/Navbar/NavBar";
 import Footer from "../../Footer";
 
 export default function Services() {
