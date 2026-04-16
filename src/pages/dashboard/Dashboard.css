@@ -1,0 +1,142 @@
+/* ===== BASE DASHBOARD WRAPPER ===== */
+.dashboard-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background: linear-gradient(to bottom, #f8fafc, #ffffff);
+}
+
+/* ===== MAIN AREA ===== */
+.dashboard-main {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 110px 24px 60px;
+}
+
+/* ===== MAIN CARD ===== */
+.dashboard-card {
+  width: 100%;
+  max-width: 900px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+
+  padding: 42px 36px;
+
+  text-align: center;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+
+  transition: all 0.25s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== BADGE ===== */
+.dashboard-badge {
+  display: inline-block;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  padding: 6px 14px;
+
+  background: #dbeafe;
+  color: #2563eb;
+
+  border-radius: 999px;
+
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+/* ===== TITLE ===== */
+.dashboard-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+
+  margin-bottom: 10px;
+}
+
+/* ===== DESCRIPTION TEXT ===== */
+.dashboard-text {
+  font-size: 15px;
+  color: #64748b;
+
+  line-height: 1.7;
+
+  max-width: 650px;
+  margin: 0 auto 32px;
+}
+
+/* ===== GRID BOXES ===== */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+
+  margin-top: 10px;
+}
+
+/* ===== INDIVIDUAL BOX ===== */
+.dashboard-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+
+  padding: 20px;
+  border-radius: 14px;
+
+  text-align: left;
+
+  transition: all 0.2s ease;
+
+  cursor: pointer;
+}
+
+.dashboard-box:hover {
+  border-color: #2563eb;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.12);
+}
+
+/* BOX TITLE */
+.dashboard-box h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+
+  margin-bottom: 6px;
+}
+
+/* BOX TEXT */
+.dashboard-box p {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card {
+    padding: 28px;
+  }
+
+  .dashboard-title {
+    font-size: 26px;
+  }
+}
