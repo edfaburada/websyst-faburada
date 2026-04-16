@@ -1,6 +1,6 @@
 import "./Home.css";
 import Navbar from "../../components/navbar/NavBar";
-import Footer from "../../components/Footer"; // only if Footer is inside components
+import Footer from "../../Footer"; // only if Footer is inside components
 
 export default function Home() {
   return (
